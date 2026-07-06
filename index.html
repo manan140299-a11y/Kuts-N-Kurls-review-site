@@ -1,0 +1,176 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Kuts N Kurls Review</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <main class="app-shell">
+    <form id="reviewForm" class="builder" autocomplete="off">
+      <div class="topbar">
+        <div>
+          <p class="eyebrow">Kuts N Kurls</p>
+          <h1>Kuts N Kurls Unisex Salon &amp; Bridal Studio</h1>
+          <p class="intro-copy">Select what matched your visit and create a review you can copy to Google.</p>
+        </div>
+        <output id="statusText" class="status-pill" aria-live="polite">Ready</output>
+      </div>
+
+      <fieldset class="control-group">
+        <legend>Rating</legend>
+        <div class="segmented two-up">
+          <label>
+            <input type="radio" name="rating" value="5" checked>
+            <span>5 stars</span>
+          </label>
+          <label>
+            <input type="radio" name="rating" value="4">
+            <span>4 stars</span>
+          </label>
+        </div>
+      </fieldset>
+
+      <fieldset class="control-group">
+        <legend>Experience</legend>
+        <div class="choice-grid">
+          <label>
+            <input type="radio" name="experience" value="excellent" checked>
+            <span>Loved it</span>
+          </label>
+          <label>
+            <input type="radio" name="experience" value="helpful">
+            <span>Helpful staff</span>
+          </label>
+          <label>
+            <input type="radio" name="experience" value="smooth">
+            <span>Smooth visit</span>
+          </label>
+          <label>
+            <input type="radio" name="experience" value="professional">
+            <span>Professional</span>
+          </label>
+        </div>
+      </fieldset>
+
+      <div class="split-grid">
+        <fieldset class="control-group">
+          <legend>Service</legend>
+          <select id="serviceType" name="serviceType">
+            <option value="haircut">Haircut or styling</option>
+            <option value="color">Hair color or treatment</option>
+            <option value="bridal">Bridal makeup</option>
+            <option value="makeup">Party makeup</option>
+            <option value="facial">Facial or skin care</option>
+            <option value="general">Salon visit</option>
+          </select>
+        </fieldset>
+
+        <fieldset class="control-group">
+          <legend>Tone</legend>
+          <select id="tone" name="tone">
+            <option value="warm">Warm</option>
+            <option value="short">Short</option>
+            <option value="detailed">Detailed</option>
+            <option value="professional">Professional</option>
+          </select>
+        </fieldset>
+      </div>
+
+      <fieldset class="control-group">
+        <legend>Highlights</legend>
+        <div class="choice-grid highlight-grid">
+          <label>
+            <input type="checkbox" name="highlights" value="friendly" checked>
+            <span>Friendly artists</span>
+          </label>
+          <label>
+            <input type="checkbox" name="highlights" value="fast" checked>
+            <span>On-time service</span>
+          </label>
+          <label>
+            <input type="checkbox" name="highlights" value="clean">
+            <span>Clean salon</span>
+          </label>
+          <label>
+            <input type="checkbox" name="highlights" value="quality" checked>
+            <span>Beautiful result</span>
+          </label>
+          <label>
+            <input type="checkbox" name="highlights" value="communication">
+            <span>Good suggestions</span>
+          </label>
+          <label>
+            <input type="checkbox" name="highlights" value="value">
+            <span>Worth the price</span>
+          </label>
+        </div>
+      </fieldset>
+
+      <fieldset id="improvementGroup" class="control-group hidden">
+        <legend>Could improve</legend>
+        <select id="improvement" name="improvement">
+          <option value="none">Nothing major</option>
+          <option value="wait">Waiting time</option>
+          <option value="parking">Parking</option>
+          <option value="updates">More guidance</option>
+          <option value="availability">Availability</option>
+        </select>
+      </fieldset>
+
+      <label class="truth-check">
+        <input id="authenticCheck" type="checkbox" checked>
+        <span>This review matches my real salon experience.</span>
+      </label>
+
+      <div class="actions">
+        <button class="primary" type="submit">Create review</button>
+        <button id="resetBtn" class="secondary" type="button">Reset</button>
+      </div>
+    </form>
+
+    <section class="preview ready-panel" aria-label="Review ready to share">
+      <article class="tutorial-card">
+        <h2>How to Paste Review on Google</h2>
+        <video src="assets/How-to-paste-review-in-google.mp4" autoplay loop muted playsinline controls></video>
+      </article>
+
+      <div class="ready-copy">
+        <p class="ready-title">Your Review Is Ready to Share</p>
+        <p class="ready-subtitle">Take a quick look and share when ready.</p>
+      </div>
+
+      <article class="review-result">
+        <div class="review-result__head">
+          <div>
+            <p class="eyebrow">Your personalized review</p>
+            <h2 id="previewTitle">Kuts N Kurls</h2>
+          </div>
+          <span id="ratingBadge" class="rating-badge">5 stars</span>
+        </div>
+
+        <textarea id="reviewOutput" readonly placeholder="Your generated review will appear here."></textarea>
+        <p id="characterCount" class="character-count">0 Characters</p>
+
+        <div class="review-tools">
+          <button id="regenerateBtn" class="tool-button" type="button" disabled>Regenerate</button>
+          <button id="editBtn" class="tool-button" type="button" disabled>Edit Review</button>
+        </div>
+      </article>
+
+      <p class="note">Note: You can review and edit before posting.</p>
+
+      <div class="share-bar">
+        <button id="copyBtn" class="secondary" type="button" disabled>Copy review</button>
+        <button id="postBtn" class="google-button" type="button" disabled>
+          <span>Copy &amp; Paste on</span>
+          <span class="google-icon" aria-hidden="true">G</span>
+          <span>Google</span>
+        </button>
+      </div>
+    </section>
+  </main>
+</body>
+</html>
